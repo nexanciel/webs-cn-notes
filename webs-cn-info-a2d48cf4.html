@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v体育 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9fafc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #1e2a3a;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 3rem 1.25rem;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* 开场短句 —— 极简留白 */
+        .opening {
+            font-size: 1.9rem;
+            font-weight: 350;
+            letter-spacing: -0.01em;
+            color: #1f2c3c;
+            padding-top: 2rem;
+            padding-bottom: 2.8rem;
+            border-bottom: 1px solid #e3e8ef;
+            margin-bottom: 2.5rem;
+        }
+
+        .opening em {
+            font-style: normal;
+            background: linear-gradient(135deg, #2b4c7a, #4b6f9b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 420;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            font-size: 1.05rem;
+            color: #2c3b4e;
+            margin-bottom: 2.8rem;
+            padding-right: 0.5rem;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.4rem;
+        }
+
+        .intro-text a {
+            color: #2a5b8c;
+            text-decoration: none;
+            border-bottom: 1.5px solid #bdcbd8;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 450;
+        }
+
+        .intro-text a:hover {
+            border-bottom-color: #2a5b8c;
+            color: #0e2c4a;
+        }
+
+        /* 特点列表 —— 温和卡片化 */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            margin: 2.8rem 0 3rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            padding: 1.3rem 1.8rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 10px rgba(0, 20, 40, 0.02), 0 1px 2px rgba(0, 0, 0, 0.02);
+            border: 1px solid #edf1f7;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .feature-item:hover {
+            border-color: #d3deea;
+            box-shadow: 0 8px 18px rgba(32, 54, 86, 0.04);
+        }
+
+        .feature-item span {
+            display: inline-block;
+            font-weight: 520;
+            font-size: 1.1rem;
+            color: #1e2f44;
+            margin-bottom: 0.15rem;
+        }
+
+        .feature-item .desc {
+            color: #3f526b;
+            font-size: 0.97rem;
+            line-height: 1.6;
+        }
+
+        /* 温和的提示 / 场景区块 */
+        .note-box {
+            background: #f1f5fb;
+            border-radius: 28px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0 2.2rem;
+            border-left: 4px solid #759bc2;
+            color: #1f334a;
+        }
+
+        .note-box p {
+            margin-bottom: 0.6rem;
+        }
+
+        .note-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .note-box strong {
+            font-weight: 560;
+            color: #11375f;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin: 2.5rem 0 1.8rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2.2rem;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.1rem;
+            font-weight: 480;
+            color: #1c3047;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+            padding-left: 0.2rem;
+        }
+
+        .faq-item .q {
+            font-weight: 480;
+            color: #1b2b3f;
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item .a {
+            color: #43586f;
+            font-size: 0.95rem;
+            padding-left: 1.2rem;
+            border-left: 2px solid #d9e2ee;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+        }
+
+        /* 温和结尾 */
+        .gentle-end {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e4e9f1;
+            color: #3d536d;
+            font-size: 0.98rem;
+            text-align: left;
+            letter-spacing: 0.01em;
+        }
+
+        .gentle-end a {
+            color: #2a5b8c;
+            text-decoration: none;
+            border-bottom: 1.5px solid #c5d2e0;
+            transition: border-color 0.2s;
+        }
+
+        .gentle-end a:hover {
+            border-bottom-color: #2a5b8c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            body {
+                padding: 1.8rem 1rem;
+            }
+
+            .opening {
+                font-size: 1.6rem;
+                padding-top: 0.5rem;
+                padding-bottom: 2rem;
+            }
+
+            .feature-item {
+                padding: 1.1rem 1.3rem;
+            }
+
+            .note-box {
+                padding: 1.4rem 1.4rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- 开场短句 -->
+        <div class="opening">
+            在信息交织的网络中，<br>选择一处简洁的起点。<em>v体育</em>
+        </div>
+
+        <!-- 承接段落 - 简明指南 + 访问提醒 -->
+        <div class="intro-text">
+            <p>
+                如果你正在寻找一个聚焦体育内容的方向，或许可以从了解 <strong><a href="https://webs-cn-vsports.com">v体育</a></strong> 开始。
+                它不是一个复杂的平台，而是将常见的赛事信息、运动视野和社区动态汇集于一处，让浏览变得更直接一些。
+            </p>
+            <p>
+                许多朋友第一次接触时，往往带着好奇与一点试探——这是很自然的事。
+                所以这篇简短介绍，就是为了帮你更快地熟悉它的布局与节奏，同时避免被无关的信息干扰。
+            </p>
+        </div>
+
+        <!-- 特点列表 (4项) -->
+        <div class="feature-list">
+            <div class="feature-item">
+                <span>· 清晰的板块</span>
+                <div class="desc">首页按赛事类型与热门话题划分，减少漫无目的的滑动。每个模块都有明确的标题引导。</div>
+            </div>
+            <div class="feature-item">
+                <span>· 克制的信息密度</span>
+                <div class="desc">页面设计倾向于留白与适度图文搭配，阅读时不容易产生压迫感，适合日常快速浏览。</div>
+            </div>
+            <div class="feature-item">
+                <span>· 更新节奏稳定</span>
+                <div class="desc">内容保持日常更新，没有频繁弹窗或突变的排版，你可以按自己的时间来查看。</div>
+            </div>
+            <div class="feature-item">
+                <span>· 链接与导航简单</span>
+                <div class="desc">主要入口都放在显眼且合乎直觉的位置，不需要反复寻找。遇到感兴趣的内容，直接点开就好。</div>
+            </div>
+        </div>
+
+        <!-- 温和场景 + 访问提醒 (自然嵌入) -->
+        <div class="note-box">
+            <p><strong>一点提醒</strong></p>
+            <p>当你在浏览器输入或搜索相关地址时，建议留意域名是否为 <strong>webs-cn-vsports.com</strong>。网络环境中相似名称不少，稍加核对能避免进入非预期的页面。<br>另外，首次访问时，可以花一两分钟了解页面的大致分区，后续使用会更顺手。</p>
+            <p style="margin-top:0.8rem;">如果你已经准备好了，直接从 <a href="https://webs-cn-vsports.com" style="color:#23507d; text-decoration:none; border-bottom:1.5px solid #b4c8de; font-weight:450;">v体育</a> 开始，慢慢探索。</p>
+        </div>
+
+        <!-- FAQ 摘要 (3个问答，只做启发不啰嗦) -->
+        <div class="faq-summary">
+            <h3>常见思路·摘要</h3>
+            <div class="faq-item">
+                <span class="q">需要注册才能浏览吗？</span>
+                <div class="a">大部分内容可以直接查看，部分互动或个性化功能可能需要简单注册，根据页面提示操作即可。</div>
+            </div>
+            <div class="faq-item">
+                <span class="q">内容偏向哪些运动？</span>
+                <div class="a">覆盖主流球类、竞技赛事以及一些综合性运动资讯，分类相对均衡，没有过度集中某一种类。</div>
+            </div>
+            <div class="faq-item">
+                <span class="q">移动端浏览体验如何？</span>
+                <div class="a">页面采用自适应布局，在手机和电脑上都能保持清晰的阅读节奏，没有强制缩放或元素错位。</div>
+            </div>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="gentle-end">
+            希望这份简短的指南能帮你更快地找到自己关注的板块。如果你有任何使用上的小问题，不妨先从页面的常见区域开始熟悉。<br>
+            保持好奇，保持轻松 —— 无论是浏览还是探索，<a href="https://webs-cn-vsports.com">v体育</a> 都在那里，安静而稳定。
+        </div>
+
+    </div>
+</body>
+</html>
